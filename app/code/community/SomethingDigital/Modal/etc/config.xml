@@ -6,5 +6,24 @@
                 <class>SomethingDigital_Modal_Model</class>
             </somethingdigital_modal>
         </models>
+        <helpers>
+            <somethingdigital_modal>
+                <class>SomethingDigital_Modal_Helper</class>
+            </somethingdigital_modal>
+        </helpers>
+        <blocks>
+            <somethingdigital_modal>
+                <class>SomethingDigital_Modal_Block</class>
+            </somethingdigital_modal>
+        </blocks>
     </global>
+    <frontend>
+        <layout>
+            <updates>
+                <somethingdigital_modal>
+                    <file>somethingdigital_modal.xml</file>
+                </somethingdigital_modal>
+            </updates>
+        </layout>
+    </frontend>
 </config>

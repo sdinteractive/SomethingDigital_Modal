@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+        <reference name="before_body_end">
+            <block type="somethingdigital_modal/modal" name="somethingdigital_modal">
+                <action method="setTemplate" ifconfig="cms/modal/enabled">
+                    <template>somethingdigital/modal/modal.phtml</template>
+                </action>
+            </block>
+        </reference>
+    </default>
+</layout>
