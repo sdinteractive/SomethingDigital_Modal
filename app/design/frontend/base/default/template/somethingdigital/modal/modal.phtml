@@ -9,7 +9,11 @@
         Mage.Cookies.set('seenModal', 1);
         
         // Show modal
-        modal = new Window({});
+        modal = new Window({
+            width: window.innerWidth,
+            height: window.innerHeight,
+            zIndex: <?php echo Mage::getStoreConfig('cms/modal/modalZindex'); ?>
+        });
         modal.getContent().update('<?php echo str_replace(array("\r", "\n"), "", addslashes($this->getLayout()->createBlock("cms/block")->setBlockId(Mage::getStoreConfig("cms/modal/block"))->toHtml())); ?>');
         modal.showCenter();
     }

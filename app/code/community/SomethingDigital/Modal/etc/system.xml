@@ -29,12 +29,21 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </block>
+                        <modalZindex>
+                            <label>Modal Z-Index</label>
+                            <frontend_type>text</frontend_type>
+                            <comment>Z-index for modal</comment>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </modalZindex>
                         <cookie_duration translate="label commment">
                             <label>Cookie Duration</label>
                             <comment>Number of days user will be cookied as having "seen" the modal (after they've seen it...)</comment>
                             <validate>validate-greater-than-zero</validate>
                             <frontend_type>text</frontend_type>
-                            <sort_order>20</sort_order>
+                            <sort_order>30</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
