@@ -4,7 +4,7 @@
         cookieDuration: <?php echo Mage::getStoreConfig('cms/modal/cookie_duration'); ?>,
         modalZIndex: <?php echo Mage::getStoreConfig('cms/modal/modalZindex')?>,
         modalContent: '<?php echo str_replace(array("\r", "\n"), "", addslashes($this->getLayout()->createBlock("cms/block")->setBlockId(Mage::getStoreConfig("cms/modal/block"))->toHtml())); ?>',
-        overlayOpacity: <?php echo Mage::getStoreConfig("cms/modal/overlay_opacity"); ?>
-
+        overlayOpacity: <?php echo Mage::getStoreConfig("cms/modal/overlay_opacity"); ?>,
+        closeOnOutsideClicks: <?php echo Mage::getStoreConfig('cms/modal/close_on_outside_clicks')?>
     });
 </script>

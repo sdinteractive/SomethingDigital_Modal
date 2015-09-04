@@ -3,9 +3,12 @@ SomethingDigital_Modal.prototype = {
     initialize: function(config) {
         this.options = config;
         this.options.seenModalFlag = 'seenModal';
+        this.options.modalElementId = '#modal';
+        this.options.closeModalElementId = "close-modal";
         if (!Mage.Cookies.get(this.options.seenModalFlag) || this.options.skipCookieCheck) {
             this.cookieUser();
             this.showModal();
+            this.setupModalClose();
         }
     },
     cookieUser: function() {
@@ -18,7 +21,6 @@ SomethingDigital_Modal.prototype = {
     },
     showModal: function() {
         this.modal = new Window({
-            // The actual window fills the whole screen
             width: window.innerWidth,
             height: window.innerHeight,
             zIndex: this.options.modalZIndex,
@@ -28,7 +30,12 @@ SomethingDigital_Modal.prototype = {
         });
         this.modal.getContent().update(this.options.modalContent);
         this.modal.showCenter();
-        document.observe('click', this.handleClick.bind(this));
+    },
+    setupModalClose: function() {
+        $(this.options.closeModalElementId).observe('click', this.closeModal.bind(this));
+        if (this.options.closeOnOutsideClicks) {
+            document.observe('click', this.handleDocumentClick.bind(this));
+        }
     },
     showOverlay: function() {
         var overlayStyle = 'width: 100%; height: 100%; background-color: black; opacity: ' + this.options.overlayOpacity + '; z-index: ' + (parseInt(this.options.modalZIndex) - 1) + '; position: absolute; top: 0; left: 0';
@@ -38,9 +45,12 @@ SomethingDigital_Modal.prototype = {
     removeOverlay: function() {
         this.overlay.remove();
     },
-    handleClick: function(event) {
-        if (!event.findElement('#modal')) {
-            this.modal.close();
+    handleDocumentClick: function(event) {
+        if (!event.findElement(this.options.modalElementId)) {
+            this.closeModal();
         }
+    },
+    closeModal: function() {
+        this.modal.close();
     }
 }
