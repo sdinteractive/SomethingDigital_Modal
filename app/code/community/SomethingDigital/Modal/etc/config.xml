@@ -26,4 +26,12 @@
             </updates>
         </layout>
     </frontend>
+    <default>
+        <cms>
+            <modal>
+                <enabled>0</enabled>
+                <cookie_duration>365</cookie_duration>
+            </modal>
+        </cms>
+    </default>
 </config>
