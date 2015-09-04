@@ -1,6 +1,12 @@
 <?xml version="1.0"?>
 <layout version="0.1.0">
     <default>
+        <reference name="head">
+            <action method="addItem" ifconfig="cms/modal/enabled">
+                <type>skin_js</type>
+                <name>js/somethingdigital_modal/modal.js</name>
+            </action>
+        </reference>
         <reference name="before_body_end">
             <block type="somethingdigital_modal/modal" name="somethingdigital_modal">
                 <action method="setTemplate" ifconfig="cms/modal/enabled">
