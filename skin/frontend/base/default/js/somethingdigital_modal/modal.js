@@ -2,17 +2,20 @@ var SomethingDigital_Modal = Class.create();
 SomethingDigital_Modal.prototype = {
     initialize: function(config) {
         this.setupOptions(config);
+        // @todo: Show after X page views
         if (!Mage.Cookies.get(this.options.seenModalFlag) || this.options.skipCookieCheck) {
             this.cookieUser();
             this.showModal();
             this.setupModalClose();
+            this.setupFormAjax();
         }
     },
     setupOptions: function(config) {
         this.options = config;
         this.options.seenModalFlag = 'seenModal';
-        this.options.modalElementId = '#modal';
-        this.options.closeModalElementId = "close-modal";
+        this.options.modalElementId = 'modal';
+        this.options.closeModalElementClass = "close-modal";
+        this.options.modalFormElementId = "modal-form";
     },
     cookieUser: function() {
         var today = new Date();
@@ -35,9 +38,22 @@ SomethingDigital_Modal.prototype = {
         this.modal.showCenter();
     },
     setupModalClose: function() {
-        $(this.options.closeModalElementId).observe('click', this.closeModal.bind(this));
+        Element.observe(this.options.modalElementId, 'click', this.handleModalClick.bind(this));
         if (this.options.closeOnOutsideClicks) {
             document.observe('click', this.handleDocumentClick.bind(this));
+        }
+    },
+    setupFormAjax: function() {
+        Event.observe($(this.options.modalFormElementId), 'submit', function(event) {
+            // @todo: AJAX submission
+            // Event.stop(event);
+            // @todo: before / after handling
+            // @todo: loading state
+        })
+    },
+    handleModalClick: function(event) {
+        if (event.findElement('.' + this.options.closeModalElementClass)) {
+           this.closeModal();
         }
     },
     showOverlay: function() {
@@ -49,7 +65,7 @@ SomethingDigital_Modal.prototype = {
         this.overlay.remove();
     },
     handleDocumentClick: function(event) {
-        if (!event.findElement(this.options.modalElementId)) {
+        if (!event.findElement('#' + this.options.modalElementId)) {
             this.closeModal();
         }
     },
