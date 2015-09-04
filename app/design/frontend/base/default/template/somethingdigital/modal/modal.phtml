@@ -1,10 +1,10 @@
 <script>
     var somethingdigital_modal = new SomethingDigital_Modal({
-        skipCookieCheck: <?php echo Mage::getStoreConfig('cms/modal/skip_cookie_check'); ?>,
-        cookieDuration: <?php echo Mage::getStoreConfig('cms/modal/cookie_duration'); ?>,
-        modalZIndex: <?php echo Mage::getStoreConfig('cms/modal/modalZindex')?>,
-        modalContent: '<?php echo str_replace(array("\r", "\n"), "", addslashes($this->getLayout()->createBlock("cms/block")->setBlockId(Mage::getStoreConfig("cms/modal/block"))->toHtml())); ?>',
-        overlayOpacity: <?php echo Mage::getStoreConfig("cms/modal/overlay_opacity"); ?>,
-        closeOnOutsideClicks: <?php echo Mage::getStoreConfig('cms/modal/close_on_outside_clicks')?>
+        skipCookieCheck: <?php echo $this->getConfig('skip_cookie_check'); ?>,
+        cookieDuration: <?php echo $this->getConfig('cookie_duration'); ?>,
+        modalZIndex: <?php echo $this->getConfig('modalZindex')?>,
+        modalContent: '<?php echo $this->getModalContent(); ?>',
+        overlayOpacity: <?php echo $this->getConfig('overlay_opacity'); ?>,
+        closeOnOutsideClicks: <?php echo $this->getConfig('close_on_outside_clicks'); ?>
     });
 </script>

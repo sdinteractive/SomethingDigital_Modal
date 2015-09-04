@@ -1,15 +1,18 @@
 var SomethingDigital_Modal = Class.create();
 SomethingDigital_Modal.prototype = {
     initialize: function(config) {
-        this.options = config;
-        this.options.seenModalFlag = 'seenModal';
-        this.options.modalElementId = '#modal';
-        this.options.closeModalElementId = "close-modal";
+        this.setupOptions(config);
         if (!Mage.Cookies.get(this.options.seenModalFlag) || this.options.skipCookieCheck) {
             this.cookieUser();
             this.showModal();
             this.setupModalClose();
         }
+    },
+    setupOptions: function(config) {
+        this.options = config;
+        this.options.seenModalFlag = 'seenModal';
+        this.options.modalElementId = '#modal';
+        this.options.closeModalElementId = "close-modal";
     },
     cookieUser: function() {
         var today = new Date();
