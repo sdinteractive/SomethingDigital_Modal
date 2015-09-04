@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config>
+    <global>
+        <models>
+            <somethingdigital_modal>
+                <class>SomethingDigital_Modal_Model</class>
+            </somethingdigital_modal>
+        </models>
+    </global>
+</config>
