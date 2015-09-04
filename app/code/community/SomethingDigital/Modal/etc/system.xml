@@ -48,6 +48,16 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </cookie_duration>
+                        <skip_cookie_check translate="label commment">
+                            <label>Skip Cookie Check</label>
+                            <comment>Useful during frontend development so you don't have to delete your cookies everytime your load the page</comment>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </skip_cookie_check>
                     </fields>
                 </modal>
             </groups>

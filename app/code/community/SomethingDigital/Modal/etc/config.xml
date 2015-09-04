@@ -31,6 +31,7 @@
             <modal>
                 <enabled>0</enabled>
                 <cookie_duration>365</cookie_duration>
+                <skip_cookie_check>0</skip_cookie_check>
             </modal>
         </cms>
     </default>

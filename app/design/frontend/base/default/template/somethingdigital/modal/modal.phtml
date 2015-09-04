@@ -1,5 +1,5 @@
 <script>
-    if (!Mage.Cookies.get('seenModal')) {
+    if (!Mage.Cookies.get('seenModal') || <?php echo Mage::getStoreConfig('cms/modal/skip_cookie_check') ?>) {
         // Cookie user
         var today = new Date();
         today.setTime(today.getTime());
