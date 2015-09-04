@@ -19,6 +19,11 @@
         });
         modal.getContent().update('<?php echo str_replace(array("\r", "\n"), "", addslashes($this->getLayout()->createBlock("cms/block")->setBlockId(Mage::getStoreConfig("cms/modal/block"))->toHtml())); ?>');
         modal.showCenter();
+        document.observe('click', function(event) {
+            if (!event.findElement('#modal')) {
+                modal.close()
+            }         
+        })
 
         function addOverlay() {
             var overlayStyle = 'width: 100%; height: 100%; background-color: black; position: absolute; top: 0; left; 0; opacity: <?php echo Mage::getStoreConfig("cms/modal/overlay_opacity"); ?>; z-index: <?php echo ((int) Mage::getStoreConfig("cms/modal/modalZindex") - 1)?>';
