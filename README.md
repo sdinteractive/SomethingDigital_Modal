@@ -39,7 +39,12 @@ The following options are available
 - **Overlay Opacity** Opacity for overlay that shows up behind the modal
 - **Error Message** Message that will be displayed to the user if there is an error submitting the form
 - **Cookie Duration** Number of days for lifetime of cookie that will flag the fact that the user saw the modal
-- **Skip Cookie Check** Will skip the cookie check and show the modal on each page load. This is useful during development. Note: You can also skip the cookie check by putting `?forceModal=1` in the query string
+- **Skip Cookie Check** Will skip the cookie check and show the modal on each page load.
+
+## Query String Parameters
+
+- `?forceModal=1` will force the modal to display, even if the user has already been cookied as having `seenModal`. This can be useful with clients so they don't have clear their cookies to look at the modal multiple times. The "Skip Cookie Check" configuration option has the same ultimate effect, but is intended for development purposes where as the query string is more useful during client demos.
+- `?suppressModal=1` will prevent the modal from being displayed for the duration of the users session. If there are questions about the ROI / bounce rate impacts of the modal an A/B test can be run with and without this query string to determine the impact of the modal on the site
 
 ## Other notes
 

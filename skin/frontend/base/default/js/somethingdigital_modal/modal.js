@@ -22,6 +22,8 @@ SomethingDigital_Modal.prototype = {
         this.options.loadingElementId = 'modal-loading';
         this.options.errorMessageElementId = 'modal-error';
         this.options.forceModalQueryStringParam = 'forceModal';
+        this.options.suppressModalQueryStringParam = 'suppressModal';
+        this.options.suppressModalCookieFlag = this.options.suppressModalQueryStringParam;
     },
     updatePageViewCookie: function() {
         var curCount = Mage.Cookies.get(this.options.pageViewCountCookieName);
@@ -37,11 +39,21 @@ SomethingDigital_Modal.prototype = {
         if (this.options.skipCookieCheck || urlParams.hasOwnProperty(forceQuery)) {
             return true;
         }
+        if (Mage.Cookies.get(this.options.suppressModalCookieFlag)) {
+            return false;
+        }
+        if (urlParams.hasOwnProperty(this.options.suppressModalQueryStringParam)) {
+            this.setSuppressModalCookieFlag();
+            return false;
+        }
         if (!Mage.Cookies.get(this.options.seenModalFlag) && 
             parseInt(Mage.Cookies.get(this.options.pageViewCountCookieName)) >= this.options.showAfterPageViews) {
             return true;
         }
         return false;
+    },
+    setSuppressModalCookieFlag: function() {
+        Mage.Cookies.set(this.options.suppressModalCookieFlag, 1);
     },
     cookieUser: function() {
         var today = new Date();
