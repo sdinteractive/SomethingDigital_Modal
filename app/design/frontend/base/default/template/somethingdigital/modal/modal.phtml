@@ -3,8 +3,9 @@
         skipCookieCheck: <?php echo $this->getConfig('skip_cookie_check'); ?>,
         cookieDuration: <?php echo $this->getConfig('cookie_duration'); ?>,
         modalZIndex: <?php echo $this->getConfig('modalZindex')?>,
-        modalContent: '<?php echo $this->getModalContent(); ?>',
+        modalContent: "<?php echo $this->getModalContent(); ?>",
         overlayOpacity: <?php echo $this->getConfig('overlay_opacity'); ?>,
-        closeOnOutsideClicks: <?php echo $this->getConfig('close_on_outside_clicks'); ?>
+        closeOnOutsideClicks: <?php echo $this->getConfig('close_on_outside_clicks'); ?>,
+        errorMessage: "<?php echo $this->getConfig('error_message')?>"
     });
 </script>

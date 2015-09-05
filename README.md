@@ -18,6 +18,7 @@ SomethingDigital_Modal relies some elements having specific class names for its 
 - `#modal-before` Wrapper for content that should be displayed in modal before form is submitted
 - `#modal-after` Wrapper for content to be displayed in modal after form is submitted. SomethingDigital_Modal uses PrototypeJS's `show()` function which requires this element be hidden via `display: none`
 - `#modal-loading` Element that will be shown while the form is being submitted. Should initially by hidden via `display: none`
+- `#modal-error` If there are any errors when the form is submitted they will show up here. Should initially be hidden via `display: none`
 
 ### Sample markup
 
@@ -34,6 +35,7 @@ The following options are available
 - **Modal Z-Index** The z-index for the modal. The overlay z-index will be calculated by subtracting one from this value
 - **Close On Outside Click** Determines whether the modal should be closed when the user clicks outside the modal
 - **Overlay Opacity** Opacity for overlay that shows up behind the modal
+- **Error Message** Message that will be displayed to the user if there is an error submitting the form
 - **Cookie Duration** Number of days for lifetime of cookie that will flag the fact that the user saw the modal
 - **Skip Cookie Check** Will skip the cookie check and show the modal on each page load. This is useful during development
 

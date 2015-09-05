@@ -19,6 +19,7 @@ SomethingDigital_Modal.prototype = {
         this.options.beforeWrapperElementId = 'modal-before';
         this.options.afterWrapperElementId = 'modal-after';
         this.options.loadingElementId = 'modal-loading';
+        this.options.errorMessageElementId = 'modal-error';
     },
     cookieUser: function() {
         var today = new Date();
@@ -51,12 +52,16 @@ SomethingDigital_Modal.prototype = {
             Event.stop(event);
             Form.request(this.options.modalFormElementId, {
                 onLoading: $(this.options.loadingElementId).show(),
-                // @todo: Instead of onComplete implement onSuccess / onFailure
-                onComplete: this.onAjaxFormComplete.bind(this)
+                onFailure: this.onFailure.bind(this),
+                onSuccess: this.onSuccess.bind(this)
             })
         }.bind(this))
     },
-    onAjaxFormComplete: function() {
+    onFailure: function(response) {
+        $(this.options.loadingElementId).hide();
+        $(this.options.errorMessageElementId).update(this.options.errorMessage).show();
+    },
+    onSuccess: function(response) {
         $(this.options.beforeWrapperElementId).hide();
         $(this.options.afterWrapperElementId).show();
     },

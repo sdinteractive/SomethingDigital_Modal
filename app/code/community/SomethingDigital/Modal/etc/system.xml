@@ -58,12 +58,21 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </overlay_opacity>
+                        <error_message>
+                            <label>Error Message</label>
+                            <comment>Message that will be displayed if the form fails to submit</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </error_message>
                         <cookie_duration translate="label commment">
                             <label>Cookie Duration</label>
                             <comment>Number of days user will be cookied as having "seen" the modal (after they've seen it...)</comment>
                             <validate>validate-greater-than-zero</validate>
                             <frontend_type>text</frontend_type>
-                            <sort_order>50</sort_order>
+                            <sort_order>60</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
@@ -73,7 +82,7 @@
                             <comment>Useful during frontend development so you don't have to delete your cookies everytime your load the page</comment>
                             <source_model>adminhtml/system_config_source_yesno</source_model>
                             <frontend_type>select</frontend_type>
-                            <sort_order>60</sort_order>
+                            <sort_order>70</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
