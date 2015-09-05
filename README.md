@@ -4,7 +4,7 @@ SomethingDigital_Modal is a tool to speed up and standardize the implementation 
 
 Install the module, add your markup to a static block (set as a "modal" through the system configuration), and it handles the rest.
 
-The module includes a number of configuration options so that its behavior can easily be tweaked from the backend and it uses a simple markup convention to do its magic.
+The module includes a number of configuration options so that its behavior can easily be tweaked from the backend and it uses a simple markup convention to do its magic. It does not load any additional libraries and leverages the Window.js library that is included with Magento.
 
 SomethingDigital_Modal was specifically crafted to handle email collection modals.
 
@@ -15,6 +15,12 @@ SomethingDigital_Modal relies some elements having specific class names for its 
 - `#modal` The outermost element of the static block should be given an ID of `#modal`. This is necessary for functionality that allows the modal to be closed by clicking outside the box.
 - `.close-modal` Any elements that will close the modal should be given a class of `.close-modal`.
 - `#modal-form` The form should be given the ID of `#modal-form`. This is necessary for AJAX submission.
+- `#modal-before` Wrapper for content that should be displayed in modal before form is submitted
+- `#modal-after` Wrapper for content to be displayed in modal after form is submitted. SomethingDigital_Modal uses PrototypeJS's `show()` function which requires this element be hidden via `display: none`
+
+### Sample markup
+
+@todo 
 
 ## Configuration Options
 

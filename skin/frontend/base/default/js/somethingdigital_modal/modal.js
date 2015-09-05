@@ -16,6 +16,8 @@ SomethingDigital_Modal.prototype = {
         this.options.modalElementId = 'modal';
         this.options.closeModalElementClass = "close-modal";
         this.options.modalFormElementId = "modal-form";
+        this.options.beforeWrapperElementId = 'modal-before';
+        this.options.afterWrapperElementId = 'modal-after';
     },
     cookieUser: function() {
         var today = new Date();
@@ -45,11 +47,15 @@ SomethingDigital_Modal.prototype = {
     },
     setupFormAjax: function() {
         Event.observe($(this.options.modalFormElementId), 'submit', function(event) {
-            // @todo: AJAX submission
-            // Event.stop(event);
-            // @todo: before / after handling
-            // @todo: loading state
-        })
+            Event.stop(event);
+            Form.request(this.options.modalFormElementId, {
+                onComplete: this.onAjaxFormComplete.bind(this)
+            })
+        }.bind(this))
+    },
+    onAjaxFormComplete: function() {
+        $(this.options.beforeWrapperElementId).hide();
+        $(this.options.afterWrapperElementId).show();
     },
     handleModalClick: function(event) {
         if (event.findElement('.' + this.options.closeModalElementClass)) {
