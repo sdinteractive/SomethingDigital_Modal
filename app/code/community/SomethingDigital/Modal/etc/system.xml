@@ -39,7 +39,7 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </show_after_page_views>
-                        <modalZindex>
+                        <modal_z_index>
                             <label>Modal Z-Index</label>
                             <frontend_type>text</frontend_type>
                             <comment>Z-index for modal</comment>
@@ -48,7 +48,7 @@
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
-                        </modalZindex>
+                        </modal_z_index>
                         <close_on_outside_clicks translate="label comment">
                             <label>Close On Outside Clicks</label>
                             <comment>Determines whether the modal should be closed if the user clicks outside of the modal</comment>
