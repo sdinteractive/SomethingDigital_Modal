@@ -34,6 +34,7 @@
                             <frontend_type>text</frontend_type>
                             <comment>Allows the modal to be suppressed until the visitor has viewed a certain amount of pages. For example, to show on the visitors second page view set this to 1</comment>
                             <sort_order>15</sort_order>
+                            <validate>required-entry validate-zero-or-greater</validate>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
@@ -42,6 +43,7 @@
                             <label>Modal Z-Index</label>
                             <frontend_type>text</frontend_type>
                             <comment>Z-index for modal</comment>
+                            <validate>required-entry validate-number</validate>
                             <sort_order>20</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
@@ -69,7 +71,7 @@
                         <overlay_opacity>
                             <label>Overlay Opacity</label>
                             <comment>Opacity for overlay behind modal (e.g. 0.7)</comment>
-                            <validate>validate-digits-range digits-range-0-1</validate>
+                            <validate>required-entry validate-digits-range digits-range-0-1</validate>
                             <frontend_type>text</frontend_type>
                             <sort_order>50</sort_order>
                             <show_in_default>1</show_in_default>
@@ -79,6 +81,7 @@
                         <error_message>
                             <label>Error Message</label>
                             <comment>Message that will be displayed if the form fails to submit</comment>
+                            <validate>required-entry</validate>
                             <frontend_type>text</frontend_type>
                             <sort_order>60</sort_order>
                             <show_in_default>1</show_in_default>
@@ -88,7 +91,7 @@
                         <cookie_duration translate="label commment">
                             <label>Cookie Duration</label>
                             <comment>Number of days user will be cookied as having "seen" the modal (after they've seen it...)</comment>
-                            <validate>validate-greater-than-zero</validate>
+                            <validate>required-entry validate-greater-than-zero</validate>
                             <frontend_type>text</frontend_type>
                             <sort_order>70</sort_order>
                             <show_in_default>1</show_in_default>
