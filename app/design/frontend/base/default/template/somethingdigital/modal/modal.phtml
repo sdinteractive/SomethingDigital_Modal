@@ -7,6 +7,7 @@
         overlayOpacity: <?php echo $this->getConfig('overlay_opacity'); ?>,
         closeOnOutsideClicks: <?php echo $this->getConfig('close_on_outside_clicks'); ?>,
         errorMessage: "<?php echo $this->getConfig('error_message'); ?>",
-        showAfterPageViews: <?php echo $this->getConfig('show_after_page_views'); ?>
+        showAfterPageViews: <?php echo $this->getConfig('show_after_page_views'); ?>,
+        closeAfterSeconds: <?php echo ($s = $this->getConfig('close_after_seconds')) ? $s : 0; ?>
     });
 </script>

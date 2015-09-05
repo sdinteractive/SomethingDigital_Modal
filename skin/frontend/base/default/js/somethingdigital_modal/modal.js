@@ -83,6 +83,10 @@ SomethingDigital_Modal.prototype = {
     onSuccess: function(response) {
         $(this.options.beforeWrapperElementId).hide();
         $(this.options.afterWrapperElementId).show();
+        var s = parseInt(this.options.closeAfterSeconds) * 1000;
+        if (s) {
+            window.setTimeout(this.closeModal.bind(this), s);
+        }
     },
     handleModalClick: function(event) {
         if (event.findElement('.' + this.options.closeModalElementClass)) {

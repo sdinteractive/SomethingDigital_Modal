@@ -35,6 +35,7 @@ The following options are available
 - **Show After X Page Views** Allows the modal to be suppressed until the visitor has viewed a certain amount of pages.
 - **Modal Z-Index** The z-index for the modal. The overlay z-index will be calculated by subtracting one from this value
 - **Close On Outside Click** Determines whether the modal should be closed when the user clicks outside the modal
+- **Close After X Seconds** Modal will be automatically closed after this number of seconds once it has been successfully submitted. Set to 0 or leave blank if you'd like the modal to stay open until the user explicity closes it
 - **Overlay Opacity** Opacity for overlay that shows up behind the modal
 - **Error Message** Message that will be displayed to the user if there is an error submitting the form
 - **Cookie Duration** Number of days for lifetime of cookie that will flag the fact that the user saw the modal
