@@ -17,6 +17,7 @@ SomethingDigital_Modal relies some elements having specific class names for its 
 - `#modal-form` The form should be given the ID of `#modal-form`. This is necessary for AJAX submission.
 - `#modal-before` Wrapper for content that should be displayed in modal before form is submitted
 - `#modal-after` Wrapper for content to be displayed in modal after form is submitted. SomethingDigital_Modal uses PrototypeJS's `show()` function which requires this element be hidden via `display: none`
+- `#modal-loading` Element that will be shown while the form is being submitted. Should initially by hidden via `display: none`
 
 ### Sample markup
 

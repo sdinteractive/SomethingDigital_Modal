@@ -18,6 +18,7 @@ SomethingDigital_Modal.prototype = {
         this.options.modalFormElementId = "modal-form";
         this.options.beforeWrapperElementId = 'modal-before';
         this.options.afterWrapperElementId = 'modal-after';
+        this.options.loadingElementId = 'modal-loading';
     },
     cookieUser: function() {
         var today = new Date();
@@ -49,6 +50,8 @@ SomethingDigital_Modal.prototype = {
         Event.observe($(this.options.modalFormElementId), 'submit', function(event) {
             Event.stop(event);
             Form.request(this.options.modalFormElementId, {
+                onLoading: $(this.options.loadingElementId).show(),
+                // @todo: Instead of onComplete implement onSuccess / onFailure
                 onComplete: this.onAjaxFormComplete.bind(this)
             })
         }.bind(this))
