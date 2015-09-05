@@ -32,6 +32,7 @@ The following options are available
 
 - **Enable** Turn modal on and off
 - **Static Block** The static block which contains the modal markup. A dropdown with all static blocks will be available to select from.
+- **Show After X Page Views** Allows the modal to be suppressed until the visitor has viewed a certain amount of pages.
 - **Modal Z-Index** The z-index for the modal. The overlay z-index will be calculated by subtracting one from this value
 - **Close On Outside Click** Determines whether the modal should be closed when the user clicks outside the modal
 - **Overlay Opacity** Opacity for overlay that shows up behind the modal

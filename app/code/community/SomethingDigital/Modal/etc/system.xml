@@ -29,6 +29,15 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </block>
+                        <show_after_page_views translate="label">
+                            <label>Show After X Page Views</label>
+                            <frontend_type>text</frontend_type>
+                            <comment>Allows the modal to be suppressed until the visitor has viewed a certain amount of pages. For example, to show on the visitors second page view set this to 1</comment>
+                            <sort_order>15</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </show_after_page_views>
                         <modalZindex>
                             <label>Modal Z-Index</label>
                             <frontend_type>text</frontend_type>

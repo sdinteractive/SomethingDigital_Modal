@@ -2,8 +2,8 @@ var SomethingDigital_Modal = Class.create();
 SomethingDigital_Modal.prototype = {
     initialize: function(config) {
         this.setupOptions(config);
-        // @todo: Show after X page views
-        if (!Mage.Cookies.get(this.options.seenModalFlag) || this.options.skipCookieCheck) {
+        this.updatePageViewCookie()
+        if (this.shouldShowModal()) {
             this.cookieUser();
             this.showModal();
             this.setupModalClose();
@@ -13,13 +13,32 @@ SomethingDigital_Modal.prototype = {
     setupOptions: function(config) {
         this.options = config;
         this.options.seenModalFlag = 'seenModal';
+        this.options.pageViewCountCookieName = 'pagesViewed';
         this.options.modalElementId = 'modal';
-        this.options.closeModalElementClass = "close-modal";
-        this.options.modalFormElementId = "modal-form";
+        this.options.closeModalElementClass = 'close-modal';
+        this.options.modalFormElementId = 'modal-form';
         this.options.beforeWrapperElementId = 'modal-before';
         this.options.afterWrapperElementId = 'modal-after';
         this.options.loadingElementId = 'modal-loading';
         this.options.errorMessageElementId = 'modal-error';
+    },
+    updatePageViewCookie: function() {
+        var curCount = Mage.Cookies.get(this.options.pageViewCountCookieName);
+        if (!curCount) {
+            Mage.Cookies.set(this.options.pageViewCountCookieName, 0);
+            return;
+        }
+        Mage.Cookies.set(this.options.pageViewCountCookieName, parseInt(curCount) + 1);
+    },
+    shouldShowModal: function() {
+        if (this.options.skipCookieCheck) {
+            return true;
+        }
+        if (!Mage.Cookies.get(this.options.seenModalFlag) && 
+            parseInt(Mage.Cookies.get(this.options.pageViewCountCookieName)) >= this.options.showAfterPageViews) {
+            return true;
+        }
+        return false;
     },
     cookieUser: function() {
         var today = new Date();
