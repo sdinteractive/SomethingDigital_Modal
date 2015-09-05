@@ -39,7 +39,7 @@ The following options are available
 - **Overlay Opacity** Opacity for overlay that shows up behind the modal
 - **Error Message** Message that will be displayed to the user if there is an error submitting the form
 - **Cookie Duration** Number of days for lifetime of cookie that will flag the fact that the user saw the modal
-- **Skip Cookie Check** Will skip the cookie check and show the modal on each page load. This is useful during development
+- **Skip Cookie Check** Will skip the cookie check and show the modal on each page load. This is useful during development. Note: You can also skip the cookie check by putting `?forceModal=1` in the query string
 
 ## Other notes
 

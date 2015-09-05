@@ -21,6 +21,7 @@ SomethingDigital_Modal.prototype = {
         this.options.afterWrapperElementId = 'modal-after';
         this.options.loadingElementId = 'modal-loading';
         this.options.errorMessageElementId = 'modal-error';
+        this.options.forceModalQueryStringParam = 'forceModal';
     },
     updatePageViewCookie: function() {
         var curCount = Mage.Cookies.get(this.options.pageViewCountCookieName);
@@ -31,7 +32,9 @@ SomethingDigital_Modal.prototype = {
         Mage.Cookies.set(this.options.pageViewCountCookieName, parseInt(curCount) + 1);
     },
     shouldShowModal: function() {
-        if (this.options.skipCookieCheck) {
+        var forceQuery = this.options.forceModalQueryStringParam,
+            urlParams = window.location.href.toQueryParams();
+        if (this.options.skipCookieCheck || urlParams.hasOwnProperty(forceQuery)) {
             return true;
         }
         if (!Mage.Cookies.get(this.options.seenModalFlag) && 
