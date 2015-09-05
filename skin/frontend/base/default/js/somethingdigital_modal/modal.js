@@ -84,6 +84,8 @@ SomethingDigital_Modal.prototype = {
     setupFormAjax: function() {
         Event.observe($(this.options.modalFormElementId), 'submit', function(event) {
             Event.stop(event);
+            this.options.modalFormSubmitElement = $(this.options.modalElementId).select('input[type="submit"]')[0];
+            Form.Element.disable(this.options.modalFormSubmitElement);
             Form.request(this.options.modalFormElementId, {
                 onLoading: $(this.options.loadingElementId).show(),
                 onFailure: this.onFailure.bind(this),
@@ -93,6 +95,7 @@ SomethingDigital_Modal.prototype = {
     },
     onFailure: function(response) {
         $(this.options.loadingElementId).hide();
+        Form.Element.enable(this.options.modalFormSubmitElement);
         $(this.options.errorMessageElementId).update(this.options.errorMessage).show();
     },
     onSuccess: function(response) {
