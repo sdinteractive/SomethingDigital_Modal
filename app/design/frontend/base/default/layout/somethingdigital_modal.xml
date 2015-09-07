@@ -2,6 +2,13 @@
 <layout version="0.1.0">
     <default>
         <reference name="head">
+            <action method="addJs" ifconfig="cms/modal/enabled">
+                <script>prototype/window.js</script>
+            </action>
+            <action method="addItem" ifconfig="cms/modal/enabled">
+                <type>js_css</type>
+                <name>prototype/windows/themes/lighting.css</name>
+            </action>
             <action method="addItem" ifconfig="cms/modal/enabled">
                 <type>skin_js</type>
                 <name>js/somethingdigital_modal/modal.js</name>

@@ -70,7 +70,8 @@ SomethingDigital_Modal.prototype = {
             zIndex: this.options.modalZIndex,
             onShow: this.showOverlay.bind(this),
             onHide: this.removeOverlay.bind(this),
-            onClose: this.removeOverlay.bind(this)
+            onClose: this.removeOverlay.bind(this),
+            className: 'lighting'
         });
         this.modal.getContent().update(this.options.modalContent);
         this.modal.showCenter();
