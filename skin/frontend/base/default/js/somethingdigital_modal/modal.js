@@ -88,14 +88,23 @@ SomethingDigital_Modal.prototype = {
             this.options.modalFormSubmitElement = $(this.options.modalElementId).select('input[type="submit"]')[0];
             Form.Element.disable(this.options.modalFormSubmitElement);
             Form.request(this.options.modalFormElementId, {
-                onLoading: $(this.options.loadingElementId).show(),
+                onLoading: this.onLoading.bind(this),
                 onFailure: this.onFailure.bind(this),
                 onSuccess: this.onSuccess.bind(this)
             })
         }.bind(this))
     },
+    onLoading: function() {
+        var loadingElement = $(this.options.loadingElementId);
+        if (loadingElement) {
+            loadingElement.show();
+        }
+    },
     onFailure: function(response) {
-        $(this.options.loadingElementId).hide();
+        var loadingElement = $(this.options.loadingElementId);
+        if (loadingElement) {
+            loadingElement.hide();
+        }
         Form.Element.enable(this.options.modalFormSubmitElement);
         $(this.options.errorMessageElementId).update(this.options.errorMessage).show();
     },
