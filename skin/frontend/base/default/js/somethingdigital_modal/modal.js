@@ -40,6 +40,9 @@ SomethingDigital_Modal.prototype = {
         if (this.options.skipCookieCheck || urlParams.hasOwnProperty(forceQuery)) {
             return true;
         }
+        if (this.options.isAlreadySubscribed && this.options.skipIfAlreadySubscribed) {
+            return false;
+        }
         if (Mage.Cookies.get(this.options.suppressModalCookieFlag)) {
             return false;
         }

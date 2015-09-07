@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <placeholders>
+        <somethingdigital_modal>
+            <block>somethingdigital_modal/modal</block>
+            <placeholder>SOMETHINGDIGITAL_MODAL_MODAL</placeholder>
+            <container>SomethingDigital_Modal_Model_Container_Modal</container>
+            <cache_lifetime>86400</cache_lifetime>
+        </somethingdigital_modal>
+    </placeholders>
+</config>

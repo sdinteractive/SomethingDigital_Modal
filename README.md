@@ -58,6 +58,7 @@ The following options are available
 - **Error Message** Message that will be displayed to the user if there is an error submitting the form
 - **Cookie Duration** Number of days for lifetime of cookie that will flag the fact that the user saw the modal
 - **Skip Cookie Check** Will skip the cookie check and show the modal on each page load.
+- **Skip If Already Subscribed** Modal will not be shown if the user has already subscribed (email address exists in Newsletter Subscribers). This should most likely be set to "Yes", unless the modal will serve another purpose than to collect email addresses
 
 ## Query String Parameters
 
