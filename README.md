@@ -20,6 +20,29 @@ SomethingDigital_Modal relies some elements having specific class names for its 
 - `#modal-loading` Element that will be shown while the form is being submitted. Should initially by hidden via `display: none`
 - `#modal-error` If there are any errors when the form is submitted they will show up here. Should initially be hidden via `display: none`
 
+If you would like to use alternate class and ID names simply copy `modal.phtml` to your sites theme and override these through additional parameters on the `SomethingDigital_Modal` constructor. For example, you could give element to close the modal a different class as follows
+
+```html
+<script>
+    var somethingdigital_modal = new SomethingDigital_Modal({
+        skipCookieCheck: <?php echo $this->getConfig('skip_cookie_check'); ?>,
+        cookieDuration: <?php echo $this->getConfig('cookie_duration'); ?>,
+        modalZIndex: <?php echo $this->getConfig('modal_z_index'); ?>,
+        modalContent: "<?php echo $this->getModalContent(); ?>",
+        overlayOpacity: <?php echo $this->getConfig('overlay_opacity'); ?>,
+        closeOnOutsideClicks: <?php echo $this->getConfig('close_on_outside_clicks'); ?>,
+        errorMessage: "<?php echo $this->getConfig('error_message'); ?>",
+        showAfterPageViews: <?php echo $this->getConfig('show_after_page_views'); ?>,
+        closeAfterSeconds: <?php echo ($s = $this->getConfig('close_after_seconds')) ? $s : 0; ?>,
+        isAlreadySubscribed: <?php echo $this->getIsAlreadySubscribed(); ?>,
+        skipIfAlreadySubscribed: <?php echo $this->getConfig('skip_if_already_subscribed'); ?>,
+        closeModalElementClass: 'alternate-close-modal-class-name',
+    });
+</script>
+```
+
+Refer to `setupOptions()` in skin/frontend/base/default/js/somethingdigital_modal/modal.js for a full list of values that can be overridden.
+
 ### Sample markup
 
 ```html

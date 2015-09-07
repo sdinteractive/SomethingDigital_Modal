@@ -11,20 +11,21 @@ SomethingDigital_Modal.prototype = {
         }
     },
     setupOptions: function(config) {
-        this.options = config;
-        this.options.seenModalFlag = 'seenModal';
-        this.options.pageViewCountCookieName = 'pagesViewed';
-        this.options.modalElementId = 'modal';
-        this.options.closeModalElementClass = 'close-modal';
-        this.options.modalFormElementId = 'modal-form';
-        this.options.beforeWrapperElementId = 'modal-before';
-        this.options.afterWrapperElementId = 'modal-after';
-        this.options.loadingElementId = 'modal-loading';
-        this.options.errorMessageElementId = 'modal-error';
-        this.options.forceModalQueryStringParam = 'forceModal';
-        this.options.suppressModalQueryStringParam = 'suppressModal';
-        this.options.suppressModalCookieFlag = this.options.suppressModalQueryStringParam;
-        this.options.windowClassName = 'lighting';
+        this.options = Object.extend({
+            seenModalFlag: 'seenModal',
+            pageViewCountCookieName: 'pagesViewed',
+            modalElementId: 'modal',
+            closeModalElementClass: 'close-modal',
+            modalFormElementId: 'modal-form',
+            beforeWrapperElementId: 'modal-before',
+            afterWrapperElementId: 'modal-after',
+            loadingElementId: 'modal-loading',
+            errorMessageElementId: 'modal-error',
+            forceModalQueryStringParam: 'forceModal',
+            suppressModalQueryStringParam: 'suppressModal',
+            suppressModalCookieFlag: this.suppressModalQueryStringParam,
+            windowClassName: 'lighting'
+        }, config);
     },
     updatePageViewCookie: function() {
         var curCount = Mage.Cookies.get(this.options.pageViewCountCookieName);
