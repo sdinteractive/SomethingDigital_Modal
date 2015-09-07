@@ -102,15 +102,14 @@ SomethingDigital_Modal.prototype = {
         }
     },
     onLoading: function() {
-        var loadingElement = $(this.options.loadingElementId);
-        if (loadingElement) {
-            loadingElement.show();
+        this.options.loadingElement = $(this.options.loadingElementId);
+        if (this.options.loadingElement) {
+            this.options.loadingElement.show();
         }
     },
     onFailure: function(response) {
-        var loadingElement = $(this.options.loadingElementId);
-        if (loadingElement) {
-            loadingElement.hide();
+        if (this.options.loadingElement) {
+            this.options.loadingElement.hide();
         }
         Form.Element.enable(this.options.modalFormSubmitElement);
         $(this.options.errorMessageElementId).update(this.options.errorMessage).show();
