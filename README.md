@@ -30,7 +30,7 @@ SomethingDigital_Modal relies some elements having specific class names for its 
     <p style="color: red; display; none;" id="modal-error"></p>
     <form action="newsletter/subscriber/new/" id="modal-form">
       <label for="email">Email Address:</label><br>
-      <input type="email" name="email">
+      <input type="email" name="email" class="validate-email" required>
       <img src="/skin/adminhtml/default/default/images/rule-ajax-loader.gif" id="modal-loading" style="display: none;"><input type="submit" name="submit" value="Submit">
     </form>
   </div>
