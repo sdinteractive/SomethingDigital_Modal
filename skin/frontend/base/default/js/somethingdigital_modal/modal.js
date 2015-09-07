@@ -128,7 +128,7 @@ SomethingDigital_Modal.prototype = {
         }
     },
     showOverlay: function() {
-        var overlayStyle = 'width: 100%; height: 100%; background-color: black; opacity: ' + this.options.overlayOpacity + '; z-index: ' + (parseInt(this.options.modalZIndex) - 1) + '; position: absolute; top: 0; left: 0';
+        var overlayStyle = 'width: 100%; height: 100%; background-color: black; opacity: ' + this.options.overlayOpacity + '; z-index: ' + (parseInt(this.options.modalZIndex) - 1) + '; position: fixed; top: 0; left: 0';
         this.overlay = new Element('div', {style: overlayStyle, 'id': 'overlay'});
         $$('body')[0].insert(this.overlay);
     },
