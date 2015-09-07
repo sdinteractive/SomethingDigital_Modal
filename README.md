@@ -22,7 +22,24 @@ SomethingDigital_Modal relies some elements having specific class names for its 
 
 ### Sample markup
 
-@todo 
+```html
+<div id="modal" style="width: 300px; border: 5px solid black; background-color: white; margin: 0 auto; z-index: 1200; padding: 20px;">
+  <div id="modal-before">
+    <h3>Weclome</h3>
+    <p>Sign up below for 20% off your first order.</p>
+    <form action="newsletter/subscriber/new/" id="modal-form">
+      <label for="email">Email Address:</label><br>
+      <input type="email" name="email">
+      <img src="/skin/adminhtml/default/default/images/rule-ajax-loader.gif" id="modal-loading" style="display: none;"><input type="submit" name="submit" value="Submit">
+    </form>
+  </div>
+  <div id="modal-after" style="display: none;">
+    <h3>Thank you</h3>
+    <p>Use coupon code SAVE20 to save 20% now!</p>
+  </div>
+  <p class="close-modal" style="text-decoration:underline;">Close</p>
+</div>
+```
 
 ## Configuration Options
 
