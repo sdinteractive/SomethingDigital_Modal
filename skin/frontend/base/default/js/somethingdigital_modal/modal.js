@@ -24,6 +24,7 @@ SomethingDigital_Modal.prototype = {
         this.options.forceModalQueryStringParam = 'forceModal';
         this.options.suppressModalQueryStringParam = 'suppressModal';
         this.options.suppressModalCookieFlag = this.options.suppressModalQueryStringParam;
+        this.options.windowClassName = 'lighting';
     },
     updatePageViewCookie: function() {
         var curCount = Mage.Cookies.get(this.options.pageViewCountCookieName);
@@ -71,7 +72,7 @@ SomethingDigital_Modal.prototype = {
             onShow: this.showOverlay.bind(this),
             onHide: this.removeOverlay.bind(this),
             onClose: this.removeOverlay.bind(this),
-            className: 'lighting'
+            className: this.options.windowClassName
         });
         this.modal.getContent().update(this.options.modalContent);
         this.modal.showCenter();
