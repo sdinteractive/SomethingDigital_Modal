@@ -87,16 +87,19 @@ SomethingDigital_Modal.prototype = {
         }
     },
     setupFormAjax: function() {
-        Event.observe($(this.options.modalFormElementId), 'submit', function(event) {
-            Event.stop(event);
-            this.options.modalFormSubmitElement = $(this.options.modalElementId).select('input[type="submit"]')[0];
-            Form.Element.disable(this.options.modalFormSubmitElement);
-            Form.request(this.options.modalFormElementId, {
-                onLoading: this.onLoading.bind(this),
-                onFailure: this.onFailure.bind(this),
-                onSuccess: this.onSuccess.bind(this)
-            })
-        }.bind(this))
+        this.options.modalFormElement = $(this.options.modalFormElementId);
+        if (this.options.modalFormElement) {
+            Event.observe(this.options.modalFormElement, 'submit', function(event) {
+                Event.stop(event);
+                this.options.modalFormSubmitElement = $(this.options.modalElementId).select('input[type="submit"]')[0];
+                Form.Element.disable(this.options.modalFormSubmitElement);
+                Form.request(this.options.modalFormElementId, {
+                    onLoading: this.onLoading.bind(this),
+                    onFailure: this.onFailure.bind(this),
+                    onSuccess: this.onSuccess.bind(this)
+                })
+            }.bind(this))
+        }
     },
     onLoading: function() {
         var loadingElement = $(this.options.loadingElementId);
