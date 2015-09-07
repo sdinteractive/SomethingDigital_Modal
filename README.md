@@ -27,6 +27,7 @@ SomethingDigital_Modal relies some elements having specific class names for its 
   <div id="modal-before">
     <h3>Weclome</h3>
     <p>Sign up below for 20% off your first order.</p>
+    <p style="color: red; display; none;" id="modal-error"></p>
     <form action="newsletter/subscriber/new/" id="modal-form">
       <label for="email">Email Address:</label><br>
       <input type="email" name="email">
