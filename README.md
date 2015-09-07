@@ -25,7 +25,7 @@ SomethingDigital_Modal relies some elements having specific class names for its 
 ```html
 <div id="modal" style="width: 300px; border: 5px solid black; background-color: white; margin: 0 auto; z-index: 1200; padding: 20px;">
   <div id="modal-before">
-    <h3>Weclome</h3>
+    <h3>Welcome</h3>
     <p>Sign up below for 20% off your first order.</p>
     <p style="color: red; display; none;" id="modal-error"></p>
     <form action="newsletter/subscriber/new/" id="modal-form">
