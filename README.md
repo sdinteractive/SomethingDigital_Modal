@@ -61,7 +61,7 @@ Refer to `setupOptions()` in skin/frontend/base/default/js/somethingdigital_moda
     <h3>Thank you</h3>
     <p>Use coupon code SAVE20 to save 20% now!</p>
   </div>
-  <p class="close-modal" style="text-decoration:underline;">Close</p>
+  <button type="button" class="close-modal" style="text-decoration:underline;">Close</button>
 </div>
 ```
 
