@@ -1,0 +1,6 @@
+#SomethingDigital_Modal
+app/code/community/SomethingDigital/Modal/ app/code/community/SomethingDigital/Modal/
+app/design/frontend/base/default/layout/somethingdigital_modal.xml app/design/frontend/base/default/layout/somethingdigital_modal.xml
+app/design/frontend/base/default/template/somethingdigital/modal/ app/design/frontend/base/default/template/somethingdigital/modal/
+app/etc/modules/SomethingDigital_Modal.xml app/etc/modules/SomethingDigital_Modal.xml
+skin/frontend/base/default/js/somethingdigital_modal/ skin/frontend/base/default/js/somethingdigital_modal/
