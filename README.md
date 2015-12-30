@@ -52,8 +52,8 @@ Refer to `setupOptions()` in skin/frontend/base/default/js/somethingdigital_moda
     <p>Sign up below for 20% off your first order.</p>
     <p style="color: red; display; none;" id="modal-error"></p>
     <form action="newsletter/subscriber/new/" id="modal-form">
-      <label for="email">Email Address:</label><br>
-      <input type="email" name="email" class="validate-email" required>
+      <label for="modal-email">Email Address:</label><br>
+      <input class="validate-email" id="modal-email" name="email" type="email" required>
       <img src="/skin/adminhtml/default/default/images/rule-ajax-loader.gif" id="modal-loading" style="display: none;"><input type="submit" name="submit" value="Submit">
     </form>
   </div>
