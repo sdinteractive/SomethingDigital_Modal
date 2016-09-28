@@ -13,6 +13,7 @@ class SomethingDigital_Modal_Model_Container_Modal extends Enterprise_PageCache_
         $template = $this->_placeholder->getAttribute('template');
         $block = new $blockClass;
         $block->setTemplate($template);
+        $block->setLayout(Mage::app()->getLayout());
         return $block->toHtml();
     }
 }
