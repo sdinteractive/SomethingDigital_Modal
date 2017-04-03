@@ -44,6 +44,9 @@ SomethingDigital_Modal.prototype = {
         if (this.options.isAlreadySubscribed && this.options.skipIfAlreadySubscribed) {
             return false;
         }
+        if (this.options.isAlreadyLoggedIn && this.options.skipIfAlreadyLoggedIn) {
+            return false;
+        }
         if (Mage.Cookies.get(this.options.suppressModalCookieFlag)) {
             return false;
         }

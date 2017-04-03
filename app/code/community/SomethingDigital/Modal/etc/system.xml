@@ -118,6 +118,16 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </skip_if_already_subscribed>
+                        <skip_if_already_logged_in translate="label commment">
+                            <label>Hide From Logged In Customers</label>
+                            <comment>Hide modal from customers who are already logged in.</comment>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </skip_if_already_logged_in>
                     </fields>
                 </modal>
             </groups>

@@ -36,6 +36,7 @@
                 <skip_cookie_check>0</skip_cookie_check>
                 <error_message>There was an error submitting the form. Please try again.</error_message>
                 <skip_if_already_subscribed>1</skip_if_already_subscribed>
+                <skip_if_already_logged_in>1</skip_if_already_logged_in>
             </modal>
         </cms>
     </default>

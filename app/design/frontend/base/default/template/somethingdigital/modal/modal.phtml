@@ -10,6 +10,8 @@
         showAfterPageViews: <?php echo $this->getConfig('show_after_page_views'); ?>,
         closeAfterSeconds: <?php echo ($s = $this->getConfig('close_after_seconds')) ? $s : 0; ?>,
         isAlreadySubscribed: <?php echo $this->getIsAlreadySubscribed(); ?>,
-        skipIfAlreadySubscribed: <?php echo $this->getConfig('skip_if_already_subscribed'); ?>
+        skipIfAlreadySubscribed: <?php echo $this->getConfig('skip_if_already_subscribed'); ?>,
+        isAlreadyLoggedIn: <?php echo $this->getIsAlreadyLoggedIn(); ?>,
+        skipIfAlreadyLoggedIn: <?php echo $this->getConfig('skip_if_already_logged_in'); ?>,
     });
 </script>
