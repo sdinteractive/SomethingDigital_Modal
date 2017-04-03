@@ -29,4 +29,13 @@ class SomethingDigital_Modal_Block_Modal extends Mage_Core_Block_Template
         }
         return 0;
     }
+
+    public function getIsAlreadyLoggedIn()
+    {
+       if (Mage::getSingleton('customer/session')->isLoggedIn()) {
+               return 1;
+       }
+       return 0;
+    }
+
 }
