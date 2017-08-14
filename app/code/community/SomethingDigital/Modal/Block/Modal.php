@@ -12,6 +12,9 @@ class SomethingDigital_Modal_Block_Modal extends Mage_Core_Block_Template
     public function getModalContent() 
     {
         $blockId = $this->getConfig('block');
+        if(!$this->getLayout()) {
+            return;
+        }
         $output = $this->getLayout()->createBlock('cms/block')->setBlockId($blockId)->toHtml();
         return str_replace(array("\r", "\n"), "", addslashes($output));
     }
